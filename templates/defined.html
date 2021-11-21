@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<br>
+<h1>
+    Definitions for {{ word }}
+</h1>
+{% for d in definition %}
+<p>
+    {{ d }}
+</p>
+{% endfor %}
+<br>
+<p>Click <a href="/">here</a> to go back to the homepage.</p>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form action="define" method="post">
+    <input type="text" name="word" placeholder="Enter a word or phrase">
+    <textarea name="definition" placeholder="Enter your definition"></textarea>
+    <input type="submit" value="Define">
+</form>
+
+<!-- Coming soon
+
+<form action="search" method="post">
+    <input type="text" name="search" placeholder="Enter a word or phrase">
+    <input type="submit" value="Search">
+</form>
+
+<br>
+
+-->
+
+<h1>Recent submissions</h1>
+{% for recent in recentwords %}
+<h2><a href="{{ recent.word }}">{{ recent.word }}</a></h2>
+<p>{{ recent.definition }}</p>
+{% endfor %}
+
+{% endblock %}
