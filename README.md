@@ -8,5 +8,5 @@ It's very easy to modify, as it's only 53 lines long!
 2. Go to the directory and type `python main.py`
 3. (Optional) Use an nginx reverse proxy for ssl and more.
 
-## Help us
-Contributions are welcome.
+## Contributions
+Contributions are welcome, please create a pull request and explain what you changed.
