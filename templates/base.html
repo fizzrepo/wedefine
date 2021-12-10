@@ -4,14 +4,14 @@
         <title>wedefine</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/index.css') }}">
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='styles/index.css') }}">
         {% endblock %}
     </head>
     <body>
-        <h1 style="text-align: center;">
-            Wedefine
+        <h1 class="nav">
+            <a href="/">Wedefine</a>
         </h1>
-        <p style="text-align: center;">
+        <p class="nav">
             The open source urban dictionary clone.
         </p>
         <div id="content">{% block content %}{% endblock %}</div>
