@@ -1,4 +1,4 @@
-# wedefine
+# wedefine - unstable branch
 Urban dictionary clone written using Python and the Flask framework in 30 minutes.
 It's very easy to modify, as it's only 53 lines long!
 
