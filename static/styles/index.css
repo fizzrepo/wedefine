@@ -63,6 +63,7 @@ water.css framework
   }
   
   input {
+    width: 100%;
     transition:
       background-color 0.1s linear,
       border-color 0.1s linear,
