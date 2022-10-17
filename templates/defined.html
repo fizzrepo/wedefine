@@ -3,11 +3,15 @@
 <h1>
     Definitions for {{ word }}
 </h1>
+{% if definition %}
 {% for d in definition %}
 <p>
     {{ d }}
 </p>
 {% endfor %}
+{% else %}
+<p>No definitions have been found, how about you try adding it yourself?</p>
+{% endif %}
 <br>
 <p>Click <a href="/">here</a> to go back to the homepage.</p>
 {% endblock %}
