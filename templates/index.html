@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
+<h1>Create a submission</h1>
 <form action="define" method="post">
     <input type="text" name="word" placeholder="Enter a word or phrase">
     <textarea name="definition" placeholder="Enter your definition"></textarea>
@@ -8,9 +9,13 @@
 </form>
 
 <h1>Recent submissions</h1>
+{% if recentwords %}
 {% for recent in recentwords %}
-<h2><a href="{{ recent.word }}">{{ recent.word }}</a></h2>
-<p>{{ recent.definition }}</p>
+<h2 class="ad"><a href="{{ recent.word }}">{{ recent.word }}</a></h2>
+<p class="bd">{{ recent.definition }}</p>
 {% endfor %}
+{% else %}
+<p>No definitions yet, be the first to define a word.</p>
+{% endif %}
 
 {% endblock %}

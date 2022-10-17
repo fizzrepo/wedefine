@@ -1,25 +1,158 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Rubik:wght@300;400;600&display=swap');
+
+:root {
+    --purple: #c700ac;
+    --red: #c70032;
+    --lightpurple: #a443ff;
+    --orange: #F7971E;
+    --yellow: #FFD200;
+    --nicegreen: #34e89e;
+    --nightblue: #0b5b7a;
+}
 
 body {
-  margin: 0 auto;
+    margin: 0;
+    font-family: 'Rubik', sans-serif;
+    background-color: #131313;
+    color: #fff;
+}
+
+.container {
+    max-width: 1175px;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 1200px) {
+    .container {
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+}
+
+
+@keyframes fadeIn {
+    0% { opacity: 1; }
+    100% { opacity: 1; }
+}
+
+.gradient_one {
+    background: var(--purple);
+    background: -webkit-linear-gradient(to right, var(--purple) 0%, var(--red) 100%);
+    background: -moz-linear-gradient(to right, var(--purple) 0%, var(--red) 100%);
+    background: linear-gradient(to right, var(--purple) 0%, var(--red) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.gradient_two {
+    background: var(--yellow);
+    background: -webkit-linear-gradient(to right, var(--orange) 0%, var(--yellow) 100%);
+    background: -moz-linear-gradient(to right, var(--orange) 0%, var(--yellow) 100%);
+    background: linear-gradient(to right, var(--orange) 0%, var(--yellow) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+h1 {
+    font-size: 40px;
+		margin: 0;
+}
+
+p {
+    font-size: 23px;
+}
+
+.hover-1 {
+    background: var(--nicegreen);
+    background: -webkit-linear-gradient(to right, var(--nicegreen) 0%, var(--nightblue) 100%);
+    background: -moz-linear-gradient(to right, var(--nicegreen) 0%, var(--nightblue) 100%);
+    background: linear-gradient(to right, var(--nicegreen) 0%, var(--nightblue) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hover-1:hover {
+    border-bottom: 2px solid var(--nicegreen);
+}
+
+.alpha {
+	font-size: 25px;
+	text-align: center;
+	margin: 0;
+	letter-spacing: 1px;
+}
+
+.mw-1 {
+    font-family: 'Rubik Mono One', sans-serif;
+    animation: fadeIn 1s;
 }
 
 .nav {
-  text-align: center;
+	text-align: center;
+	margin: 10px;
+	margin-bottom: 30px;
+	padding: 0;
 }
 
-.navbar {
-  float: left;
+.text-center {
+	text-align: center;
 }
 
-.navbar a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+.mainheader {
+	margin-top: 30px;
 }
 
-.navbar a:hover {
-  background-color: #111;
+input {
+		width: 100%;
+		color: #fff;
+    background-color: #202020;
+    font-family: inherit;
+    font-size: inherit;
+    margin-right: 6px;
+    margin-bottom: 6px;
+    padding: 10px;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+    border-radius: 6px;
+    outline: none;
+}
+
+textarea {
+	color: #fff;
+	background-color: #202020;
+	font-family: inherit;
+	font-size: inherit;
+	margin-right: 6px;
+	margin-bottom: 6px;
+	padding: 10px;
+	border-width: initial;
+	border-style: none;
+	border-color: initial;
+	border-image: initial;
+	border-radius: 6px;
+	outline: none;
+	max-width: 100%;
+	width: 100%;
+}
+
+input[type="submit" i] {
+	background-color: #001b22;
+}
+
+a {
+	text-decoration: none;
+	color: #a443ff;
+}
+
+.bd {
+	margin-top: 0;
+}
+
+.ad {
+	margin-bottom: 5px;
 }
