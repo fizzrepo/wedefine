@@ -4,18 +4,20 @@
         <title>wedefine</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/index.css') }}">
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='styles/index.css') }}">
         {% endblock %}
     </head>
     <body>
-        <a href="/">
-            <h1 style="text-align: center;">
-                Wedefine
-            </h1>
-        </a>
-        <p style="text-align: center;">
-            The open source urban dictionary clone.
-        </p>
-        <div id="content">{% block content %}{% endblock %}</div>
+        <div class="container">
+            <div class="nav-section">
+                <h1 class="text-center mainheader"><a href="/" class="gradient_one nav">Wedefine</a></h1>
+                <p class="alpha">alpha</p>
+                <p class="nav">
+                    The open source urban dictionary clone.
+                </p>
+            </div>
+            
+            <div id="content">{% block content %}{% endblock %}</div>
+        </div>
     </body>
 </html>
