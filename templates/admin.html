@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Wedefine - Admin panel</h1>
+<p>Logged in as {{user.username}}</p>
+
+{% if words %}
+{% for word in words %}
+<h2 class="ad"><a href="{{ word.word }}">{{ word.word }}</a> <a href="/admin/banip?ip={{ word.ip_address }}">[Ban IP]</a> <a href="/admin/delete/{{ word.id }}">[Delete]</a></h2>
+<p class="bd">{{ word.definition }}</p>
+{% endfor %}
+{% else %}
+<p>No definitions yet, your site is kinda dead, buddy.</p>
+{% endif %}
+
+{% endblock %}
