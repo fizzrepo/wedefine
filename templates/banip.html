@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Wedefine - Admin IPBAN Panel</h1>
+<p>Logged in as {{user.username}}</p>
+
+<form action="/admin/banip/" method="post">
+    <input type="text" name="ip" placeholder="Enter the IP to ban" value="{{ip2ban}}">
+    <input type="text" name="reason" placeholder="Enter the reason for the ban" value="Spam posts.">
+    <input type="submit" value="Ban">
+</form>
+
+<h1>Existing bans</h1>
+{% if ipbans %}
+{% for ipban in ipbans %}
+<h2 class="ad">{{ ipban.ip_address }}</h2>
+<p class="bd">{{ ipban.reason }}</p>
+{% endfor %}
+{% else %}
+<p>No IP bans yet, phew.</p>
+{% endif %}
+
+{% endblock %}
