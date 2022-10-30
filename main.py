@@ -44,6 +44,14 @@ def add():
         return flask.redirect('/')
     return flask.redirect(word)
 
+@app.route('/search', methods=['POST'])
+def search_endpoint():
+    try:
+        word = flask.request.form['word'].lower()
+        return flask.redirect(word)
+    except:
+        return flask.redirect('/')
+
 if __name__ == '__main__':
     app.run(debug=False)
     

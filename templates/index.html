@@ -8,6 +8,11 @@
     <input type="submit" value="Define">
 </form>
 
+<form action="search" method="post">
+    <input type="text" name="word" placeholder="Search for a word or phrase">
+    <input type="submit" value="Search">
+</form>
+
 <h1>Recent submissions</h1>
 {% if recentwords %}
 {% for recent in recentwords %}
