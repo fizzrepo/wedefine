@@ -1,0 +1,15 @@
+<html lang="en">
+    <head>
+        {% block head %}
+        <title>wedefine</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='styles/index.css') }}">
+        {% endblock %}
+    </head>
+    <body>
+        <div class="container"> 
+            <div id="content" style="padding-top: 30px;">{% block content %}{% endblock %}</div>
+        </div>
+    </body>
+</html>

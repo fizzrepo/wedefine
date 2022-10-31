@@ -46,6 +46,7 @@ class BannedIP(db.Model):
 
 db.create_all()
 
+
 if not User.query.filter_by(username='admin').first():
     admin = User(username='admin', password=bcrpt.generate_password_hash('admin'), admin=True)
     db.session.add(admin)
@@ -69,7 +70,8 @@ def index():
         ip = request.remote_addr
         return render_template('banned.html', ip=ip, reason=check_ip(request))
     words = Word.query.order_by(Word.id.desc()).limit(10).all()
-    return render_template('index.html', recentwords = words)
+    topwords = Word.query.order_by(Word.id.desc()).limit(10).all()
+    return render_template('index.html', recentwords = words, topwords = topwords)
 
 @app.route('/<word>')
 def word(word):
@@ -163,6 +165,20 @@ def banip():
         return redirect('/admin')
     return redirect('/')
 
+@app.route('/admin/unbanip/<id>')
+@login_required
+def unbanip(id):
+    if current_user.admin:
+        ip = BannedIP.query.filter_by(id=id).first()
+        db.session.delete(ip)
+        db.session.commit()
+        return redirect('/admin/banip')
+    return redirect('/')
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
+
 if __name__ == '__main__':
-    app.run(debug=False)
+    app.run(debug=True)
     

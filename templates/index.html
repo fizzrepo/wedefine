@@ -8,19 +8,40 @@
     <input type="submit" value="Define">
 </form>
 
+<h1>Or search one up</h1>
 <form action="search" method="post">
     <input type="text" name="word" placeholder="Search for a word or phrase">
     <input type="submit" value="Search">
 </form>
 
-<h1>Recent submissions</h1>
-{% if recentwords %}
-{% for recent in recentwords %}
-<h2 class="ad"><a href="{{ recent.word }}">{{ recent.word }}</a></h2>
-<p class="bd">{{ recent.definition }}</p>
-{% endfor %}
-{% else %}
-<p>No definitions yet, be the first to define a word.</p>
-{% endif %}
+<div class="col">
+    <div>
+        <h1>Top submissions</h1>
+        {% if topwords %}
+        {% for wordlol in topwords %}
+        <div class="coolitem">
+            <h2 class="ad"><a href="{{ wordlol.word }}">{{ wordlol.word }}</a></h2>
+            <p class="bd">{{ wordlol.definition }}</p>
+        </div>
+        {% endfor %}
+        {% else %}
+        <p>No definitions yet, be the first to define a word.</p>
+        {% endif %}
+    </div>
+    <div>
+        <h1>Recent submissions</h1>
+        {% if recentwords %}
+        {% for recent in recentwords %}
+        <div class="coolitem">
+            <h2 class="ad"><a href="{{ recent.word }}">{{ recent.word }}</a></h2>
+            <p class="bd">{{ recent.definition }}</p>
+        </div>
+        {% endfor %}
+        {% else %}
+        <p>No definitions yet, be the first to define a word.</p>
+        {% endif %}
+    </div>
+</div>
+
 
 {% endblock %}

@@ -13,7 +13,7 @@
 <h1>Existing bans</h1>
 {% if ipbans %}
 {% for ipban in ipbans %}
-<h2 class="ad">{{ ipban.ip_address }}</h2>
+<h2 class="ad">{{ ipban.ip_address }} <a href="/admin/unbanip/{{ ipban.id }}">[UNBAN IP]</a></h2>
 <p class="bd">{{ ipban.reason }}</p>
 {% endfor %}
 {% else %}
